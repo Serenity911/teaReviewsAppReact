@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Teas list:</h2>
+<ul>
+    {% for tea in teas %}
+        <li>{{ tea.tea_name }}</li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

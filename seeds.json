@@ -1,0 +1,25 @@
+[
+    {
+    "model": "review.Tea",
+    "pk": 1,
+    "fields": {
+      "tea_name": "Earl Grey"
+    }
+  },
+  {
+    "model": "review.Tea",
+    "pk": 2,
+    "fields": {
+      "tea_name": "Jasmin Green Tea"
+  }
+  },
+  {
+    "model": "review.Review",
+    "pk": 1,
+    "fields": {
+      "review_text": "Best tea ever",
+      "username": "Silvia",
+      "tea": 1
+    }
+  }
+]

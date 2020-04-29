@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>Latest teas reviews:</p>
+    {% for review in reviews %}
+        <h2>{{ review.tea }}</h2>
+        <p>{{ review.review_text }}</p>
+        <p>{{ review.username }}</p>
+    {% endfor %}
+
+{% endblock %}

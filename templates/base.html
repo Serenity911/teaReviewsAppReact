@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tea Reviews</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <ul class="navbar-nav">
+                <li class="nav"><a class="navbar-brand" href="{% url 'reviews_index' %}">Home</a></li>
+                <li class="nav"><a class="navbar-brand " href="{% url 'teas_index' %}" >Teas</a></li>
+                {% if user.is_authenticated %}
+                    <li class="nav"><a class="navbar-brand" href="{% url 'review_new' %}">Add Review</a></li>
+                    <li class="nav"><a class="navbar-brand " href="{% url 'tea_new' %}" >Add Tea</a></li>
+                    <li class="nav"><a class="navbar-brand " href="{% url 'user_logout' %}" >Logout</a></li>
+                {% else %}
+                <li class="nav"><a class="navbar-brand " href="{% url 'register' %}" >Register</a></li>
+                <li class="nav"><a class="navbar-brand " href="{% url 'user_login' %}" >Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header> 
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>
