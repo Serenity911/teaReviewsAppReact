@@ -1,16 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+# from tea.models import *
+import tea.models
 
-
-class Tea(models.Model):
-    tea_name = models.CharField(max_length = 30)
-    def __str__(self):
-        return self.tea_name
 
 class Review(models.Model):
     review_text = models.CharField(max_length = 100)
     username = models.CharField(max_length = 15)
-    tea = models.ForeignKey(Tea, on_delete = models.CASCADE)
+    tea = models.ForeignKey(tea.models.Tea, on_delete = models.CASCADE)
     def __str__(self):
         return self.review_text
 

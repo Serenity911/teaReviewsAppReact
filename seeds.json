@@ -1,13 +1,13 @@
 [
     {
-    "model": "review.Tea",
+    "model": "tea.Tea",
     "pk": 1,
     "fields": {
       "tea_name": "Earl Grey"
     }
   },
   {
-    "model": "review.Tea",
+    "model": "tea.Tea",
     "pk": 2,
     "fields": {
       "tea_name": "Jasmin Green Tea"
@@ -22,4 +22,4 @@
       "tea": 1
     }
   }
-]
+  ]

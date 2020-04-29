@@ -15,12 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from rest_framework import routers
 from django.contrib.auth.views import LoginView, LogoutView
+from review import views as reviewViews
+from tea import views as teaViews
 
+
+router = routers.DefaultRouter()
+router.register(r'reviews', reviewViews.ReviewView, 'review')
+router.register(r'teas', teaViews.TeaView, 'teas')
+
+# urlpatterns = [
+#     path('teasReviews', include('review.urls')),
+#     path('admin', admin.site.urls),
+#     path('userLogin', LoginView.as_view(template_name='authentication/login.html'), name='user_login'),
+#     path('register', LoginView.as_view(), name='register'),
+#     path('/userLogout', LogoutView.as_view(template_name='review/index.html'), name='user_logout'),
+# ]
 urlpatterns = [
-    path('teasReviews', include('review.urls')),
-    path('admin', admin.site.urls),
-    path('userLogin', LoginView.as_view(template_name='authentication/login.html'), name='user_login'),
-    path('register', LoginView.as_view(), name='register')
-
-]
+        path('admin/', admin.site.urls),
+        path('teaReviews/api/', include(router.urls)),
+    ]

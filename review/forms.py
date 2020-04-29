@@ -1,16 +1,10 @@
 from django import forms
 from .models import *
 from django.contrib.auth.models import User
-
-
-class TeaForm(forms.ModelForm):
-
-    class Meta:
-        model = Tea
-        fields = ('tea_name',)
+import tea.models
 
 class ReviewForm(forms.ModelForm):
-    tea = forms.ModelChoiceField(queryset=Tea.objects.all())
+    tea = forms.ModelChoiceField(queryset=tea.models.Tea.objects.all())
     class Meta:
         model = Review
         fields = ('review_text', 'username', 'tea')
